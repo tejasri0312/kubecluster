@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubepro-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubepro
+  template:
+    metadata:
+      labels:
+        app: kubepro
+    spec:
+      containers:
+        - name: kubepro
+          image: navyasai17/web1715
+          ports:
+            - containerPort: 80
